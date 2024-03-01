@@ -32,8 +32,7 @@ public class LivroService {
 	}
 	
 	public void excluir(long id) {
-		var excluir = new Livro(id, null, null, null);
-		repository.delete(excluir);
+		repository.deleteById(id);
 	}
 
 
