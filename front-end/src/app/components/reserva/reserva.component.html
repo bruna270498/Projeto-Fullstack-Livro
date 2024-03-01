@@ -1,0 +1,21 @@
+<!-- Campo de pesquisa de reservas -->
+<div class="pesquisaReserva">
+    <input class="input is-danger" id="pesquisaReserva" #reservas type="text" (input)="filtrarReservas(reservas.value)"   placeholder="Presquisar Reservas..."/>
+</div>
+<!-- Lista de reservas filtradas -->
+
+<!-- Lista de reservas filtradas -->
+<ul>
+    <li class="liReserva" *ngFor="let reserva of reservaFiltrada">
+        <div class="excluir block">
+            <span class="tag is-danger">
+                Baixar Reserva
+              <button class="delete is-medium" type="submit" (click)="reserva.id !== undefined ? exluirReserva(reserva.id) : null"></button>
+            </span>
+          </div>
+        <h4 class="T reserva texto"><strong>Livro: </strong> {{reserva.livro.titulo | uppercase}}</h4>
+        <p class="reserva texto"><strong>Usuario: </strong> <em>{{reserva.usuario | titlecase}}</em></p>
+        <p class="reserva texto"><strong>Data da Reserva: </strong> <em>{{reserva.data_inicio}}</em></p>
+        <p class="reserva texto"><strong>Data de Devolução: </strong> <em>{{reserva.data_fim}}</em></p>
+    </li>
+</ul>
