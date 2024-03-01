@@ -10,12 +10,12 @@ Este é um projeto fullstack desenvolvido utilizando Java no backend com o frame
 
 ## Tecnologias Utilizadas
 
-- ### Backend:
+ ### Backend:
  - Java.
  - Spring Boot.
  - Spring Data JPA.
 
-- ### Frontend:
+ ### Frontend:
  - Angular.
  - Angular CLI.
  - Bulma.
