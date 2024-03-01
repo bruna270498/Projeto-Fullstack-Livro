@@ -2,6 +2,7 @@ package br.com.ibm.consulting.bootcamp.demospring.service;
 
 import java.util.List;
 
+import br.com.ibm.consulting.bootcamp.demospring.exception.ErrorIdNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -32,7 +33,11 @@ public class LivroService {
 	}
 	
 	public void excluir(long id) {
-		repository.deleteById(id);
+		if (repository.existsById(id)) {
+			repository.deleteById(id);
+		} else {
+			throw  new ErrorIdNotFoundException("Livro não encontrado pelo id:" + id);
+		}
 	}
 
 
