@@ -1,0 +1,15 @@
+/home/bruna/Documentos/Projeto-Fullstack-Livro/back-end/src/main/java/br/com/ibm/consulting/bootcamp/demospring/domain/Exemplar.java
+/home/bruna/Documentos/Projeto-Fullstack-Livro/back-end/src/main/java/br/com/ibm/consulting/bootcamp/demospring/exception/ErrorIdNotFoundException.java
+/home/bruna/Documentos/Projeto-Fullstack-Livro/back-end/src/main/java/br/com/ibm/consulting/bootcamp/demospring/domain/Greeting.java
+/home/bruna/Documentos/Projeto-Fullstack-Livro/back-end/src/main/java/br/com/ibm/consulting/bootcamp/demospring/controller/LivroController.java
+/home/bruna/Documentos/Projeto-Fullstack-Livro/back-end/src/main/java/br/com/ibm/consulting/bootcamp/demospring/service/ExemplarService.java
+/home/bruna/Documentos/Projeto-Fullstack-Livro/back-end/src/main/java/br/com/ibm/consulting/bootcamp/demospring/service/ReservaService.java
+/home/bruna/Documentos/Projeto-Fullstack-Livro/back-end/src/main/java/br/com/ibm/consulting/bootcamp/demospring/domain/Livro.java
+/home/bruna/Documentos/Projeto-Fullstack-Livro/back-end/src/main/java/br/com/ibm/consulting/bootcamp/demospring/repository/ExemplarRepository.java
+/home/bruna/Documentos/Projeto-Fullstack-Livro/back-end/src/main/java/br/com/ibm/consulting/bootcamp/demospring/DemoSpringApplication.java
+/home/bruna/Documentos/Projeto-Fullstack-Livro/back-end/src/main/java/br/com/ibm/consulting/bootcamp/demospring/controller/ReservaController.java
+/home/bruna/Documentos/Projeto-Fullstack-Livro/back-end/src/main/java/br/com/ibm/consulting/bootcamp/demospring/domain/Reserva.java
+/home/bruna/Documentos/Projeto-Fullstack-Livro/back-end/src/main/java/br/com/ibm/consulting/bootcamp/demospring/controller/GreetingController.java
+/home/bruna/Documentos/Projeto-Fullstack-Livro/back-end/src/main/java/br/com/ibm/consulting/bootcamp/demospring/service/LivroService.java
+/home/bruna/Documentos/Projeto-Fullstack-Livro/back-end/src/main/java/br/com/ibm/consulting/bootcamp/demospring/repository/ReservaRepository.java
+/home/bruna/Documentos/Projeto-Fullstack-Livro/back-end/src/main/java/br/com/ibm/consulting/bootcamp/demospring/repository/LivroRepository.java
