@@ -6,6 +6,7 @@ Este é um projeto fullstack desenvolvido utilizando Java no backend com o frame
 
 ## Layout da Página
 
+<img src='front-end/src/assets/Gravação de tela de 01-03-2024 14_31_21.gif'/>
 
 ## Tecnologias Utilizadas
 
