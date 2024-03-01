@@ -1,0 +1,32 @@
+.reserva{
+    font-size: 15px;
+    margin-bottom: 4%;
+    color: black;
+}
+
+.T{
+    margin-top: -7%;
+}
+
+.btnEx{
+    margin-left: 27%;
+    margin-right: 27%;
+    margin-top: 7%;
+    margin-bottom: 5%;
+    font-size: 15px;
+}
+
+.liReserva{
+    padding-top: 1%;
+}
+
+.excluir{
+    font-size: 14px;
+}
+
+.pesquisaReserva{
+    margin-top: -10%;
+    margin-left: 10%;
+    width: 80%;
+    margin-bottom: 8%;
+}

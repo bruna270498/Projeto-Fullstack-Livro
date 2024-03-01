@@ -1,0 +1,83 @@
+.main{
+    width: 96%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-top: 1%;
+}
+
+.title{
+    font-size: 20px;
+    margin-bottom: 3%;
+    margin-top: -7%;
+    text-align:justify;
+}
+
+.btnForm{
+    margin-top: 5%;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.di{
+    padding-top: 2%;
+    text-align: center;
+
+}
+
+.b{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+.button{
+    font-size: 14px;
+}
+
+.formCadastro{
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2%;
+    flex-basis: 23%;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 4%; 
+    margin-bottom: 4%;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 255, 0.4);
+    background-color: white;
+}
+
+.label{
+    font-size: 20px;
+    color: black;
+}
+
+.pri{
+    margin-top: -6%;
+}
+
+.btncadastrar{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 17px;
+}
+
+.input{
+    font-size: 17px;
+    margin-top: 1%;
+}
+
+.cadLiv{
+    margin-top: -14%;
+}
+
+.livros{
+    padding-top: 1%;
+}

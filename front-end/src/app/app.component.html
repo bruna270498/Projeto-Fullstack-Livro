@@ -1,0 +1,139 @@
+<header class="divHeader">
+  <div class="buttons are-medium">
+    <button class="button" type="button" (click)="toogleComponeteReserva()">{{text}}</button>
+  </div>
+  <div class="divInputHeader">
+    <input 
+      class="input is-danger"  
+      *ngIf="!reservaAtivado" 
+      type="text" 
+      #pesquisa 
+      (input)="filtrarLivro(pesquisa.value)" 
+      placeholder="Pesquisar..."
+    >
+  </div>
+  <div class="buttons are-medium" *ngIf="!reservaAtivado">
+    <button class="button cadLiv" *ngIf="!mostrarLivro"  (click)="toggleLivro()">Cadastrar Livro</button>
+  </div>
+</header>
+<main class="main">
+  
+  <app-reserva *ngIf="reservaAtivado"></app-reserva>
+  
+  <div class="livros" *ngIf="!reservaAtivado">
+    <!-- Aqui é o formulario de cadastro de novo livro -->
+
+    <form  class="formCadastro" *ngIf="mostrarLivro" (submit)="cadastrarLivro(titulo.value, autor.value, anoPublicacao.value, quantidade.value)">
+      <!-- Este botão permite fechar o formulário de cadastro de livro, caso não deseje cadastrar um novo livro. -->
+      <div class="excluir block">
+        <span class="tag is-danger">
+          Fechar
+          <button class="delete is-small" type="button" (click)="toggleLivro()"></button>
+        </span>
+      </div>
+  
+      <label class="texto label pri" for="titulo">Tíluto:</label>
+      <input class="input is-hovered" id="titulo" #titulo type="text" placeholder="Título do Livro"/>
+      <label class="texto label" for="autor">Autor:</label>
+      <input class="input is-hovered" id="autor" #autor type="text" placeholder="Autor"/>
+      <label class="texto label" for="ano_publicacao">Ano Publicação:</label>
+      <input class="input is-hovered" id="ano_publicacao" #anoPublicacao type="text" placeholder="Ano de Publicação"/>
+      <label class="texto label" for="quantidade">Quantidade:</label>
+      <input class="input is-hovered is-small" id="quantidade" #quantidade type="number" placeholder="Quantidade de Exemplar"/>
+    
+      <button class="btncadastrar button is-success" type="submit">Cadastrar</button>
+  
+    </form>
+
+    <!-- Aqui mostra toda lista de livros -->
+  
+    <ul >
+      <li *ngFor="let livro of livroFiltrado">
+          <!-- Exclui livro do banco de dados -->
+          <div class="excluir block">
+            <span class="tag is-danger">
+              Excluir
+              <button class="delete is-small" type="submit"  *ngIf="livro.id !== undefined"  (click)="excluirLivro(livro.id)"></button>
+            </span>
+          </div>
+  
+        <h4 class="title texto">{{livro.titulo | uppercase}}</h4>
+        <p class="texto"><strong>Id: </strong> <em>{{livro.id}}</em></p>
+        <p class="texto" ><strong>Autor: </strong>  <em>{{livro.autor | titlecase}}</em></p>
+        <p class="texto"><strong>Ano Publicação: </strong>  <em>{{livro.ano_publicacao}}</em></p>
+  
+        <!-- Botão para expandir e mostrar quantidade de exemplar -->
+        <div class="b">
+          <button class="button button is-success is-outlined is-small" (click)="exemplarId(livro.id!)">Exemplar</button>
+        </div>
+        
+        <div *ngIf="mostraQuantidade && quantidadePorLivro[livro.id!] !== undefined;">
+          <p class="texto"><strong>Quantidade: </strong> <em>{{ quantidadePorLivro[livro.id!] }}</em></p>
+  
+          <!-- Formulario de atualização de quantidade -->
+  
+          <form (submit)="atualizarExemplar(livro.id!, quantidade.value)">
+            <div class="di control">
+              <input
+               class="input is-focused is-small" 
+               type="text" 
+               #quantidade 
+               placeholder="Quantidade"
+               >
+               <button class="btnForm button is-success is-light is-small is-rounded" type="submit">Atualizar Exemplar</button>
+            </div>
+          </form>
+          
+        </div>
+  
+       <!-- Esta condição exibe o formulário apenas se o livro foi cadastrado sem exemplar -->
+  
+        <form 
+        *ngIf="novoExemplar.bool && livro.id === novoExemplar.id" 
+        (submit)="cadastrarExemplar(livro.id, quantidadeI.value)"
+        >
+        <div class="di control">
+          <input class="input is-focused is-small" type="text" #quantidadeI placeholder="Quantidade" />
+          <button class="btnForm button is-success is-light is-small is-rounded" type="submit">Cadastrar Exemplar</button>
+        </div>
+        </form>
+  
+        <!-- Aqui cria uma nova reserva para o livro -->
+  
+        <div class="b">
+          <button class="button is-info is-outlined is-small" (click)="toggleReserva(livro.id!)" >Reservar</button>
+        </div>
+        
+        <section *ngIf="reserva && idReserva === livro.id">
+          <form *ngIf="reserva">
+            <div class="di control">
+            <input
+               id="usuario" 
+               #usuario 
+               type="text" 
+               class="input is-focused is-small" 
+               placeholder="Digite o nome do usuario..." 
+              />
+            <button
+              class="btnForm button is-success is-light is-small is-rounded"
+              type="submit"
+              (click)="novaReserva(usuario.value, livro.id)"
+            >
+              Reservar Livro
+            </button>
+            </div>
+        </form>
+  
+        <!-- Retorna os dados da reserva se a operação foi bem-sucedida -->
+        <div *ngIf="reservaObj.usuario !== '' && reserva">
+            <p class="texto"><strong>Nome: </strong> {{reservaObj.usuario | titlecase}}</p>
+            <p class="texto"><strong>Data de Reserva: </strong><em>{{reservaObj.data_inicio}}</em></p>
+            <p class="texto"><strong>Data de Devolução: </strong><em>{{reservaObj.data_fim}}</em></p>
+        </div>
+        </section>
+      </li>
+    </ul>
+  </div>
+</main>
+
+<router-outlet />
