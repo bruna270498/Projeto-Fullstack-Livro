@@ -64,7 +64,7 @@
   
         <!-- Botão para expandir e mostrar quantidade de exemplar -->
         <div class="b">
-          <button class="button button is-success is-outlined is-small" (click)="exemplarId(livro.id!)">Exemplar</button>
+          <button class="button button is-success is-small" (click)="exemplarId(livro.id!)">Exemplar</button>
         </div>
         
         <div *ngIf="mostraQuantidade && quantidadePorLivro[livro.id!] !== undefined;">
@@ -101,7 +101,7 @@
         <!-- Aqui cria uma nova reserva para o livro -->
   
         <div class="b">
-          <button class="button is-info is-outlined is-small" (click)="toggleReserva(livro.id!)" >Reservar</button>
+          <button class="button is-info is-small" (click)="toggleReserva(livro.id!)" >Reservar</button>
         </div>
         
         <section *ngIf="reserva && idReserva === livro.id">
